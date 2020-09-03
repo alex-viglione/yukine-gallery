@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <h1>Yukine Gallery [WIP]</h1>
+        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         <h3>Welcome to the Chris Zone</h3>
         <div id="gallery">
             <img v-for="i in img_paths" class="pic" img alt="Beautiful Chris" :src="i"
@@ -78,5 +79,15 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover
+}
+
+.xbutton {
+    position: fixed;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    z-index: 10;
+    top: 20px;
+    right: 20px;
 }
 </style>
