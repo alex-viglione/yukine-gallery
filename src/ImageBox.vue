@@ -59,8 +59,8 @@ export default {
 <style scoped>
 #image_box {
     position: fixed;
-    z-index: 4;
-    top: 0;
+    top: 10%;
+    height: 80%;
     width: 100%;
     background-color: #222;
     display: flex;
@@ -71,12 +71,12 @@ export default {
 #image_box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .inner {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     padding: 2em;
 }
 
