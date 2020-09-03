@@ -62,6 +62,7 @@ export default {
     top: 10%;
     height: 80%;
     width: 100%;
+    padding: 2em 0;
     background-color: #222;
     display: flex;
     align-items: center;
@@ -75,7 +76,7 @@ export default {
 }
 
 .inner {
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding: 2em;
 }
