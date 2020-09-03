@@ -1,7 +1,9 @@
 <template>
     <div id="image_box">
         <h1 @click="prev" v-show="hasPrev()"><</h1>
-        <img :src="images[index]" alt="">
+        <div class="inner">
+            <img :src="images[index]" alt="">
+        </div>
         <h1 @click="next" v-show="hasNext()">></h1>
     </div>
 </template>
@@ -56,11 +58,30 @@ export default {
 
 <style scoped>
 #image_box {
-    width: 100vw;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    width: 100%;
     background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #image_box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner {
+    width: 60%;
+    height: 60%;
+    padding: 2em;
+}
+
+h1 {
+    cursor: pointer;
+    color: white;
 }
 </style>
