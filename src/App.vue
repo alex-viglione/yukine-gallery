@@ -10,22 +10,22 @@
 
 <script>
 export default {
-  name: 'App',
-  data() {
-      return {
-          img_paths: []
-      }
-  },
-  methods: {
-      importAll(r) {
-          r.keys().forEach(key => (this.img_paths.push({pathlong: r(key)})));
-      }
-  },
-  mounted() {
-    {
-        this.importAll(require.context('./assets/'));
+    name: 'App',
+    data() {
+        return {
+            img_paths: []
+        }
+    },
+    methods: {
+        importAll(r) {
+            r.keys().forEach(key => (this.img_paths.push({pathlong: r(key)})));
+        }
+    },
+    mounted() {
+        {
+            this.importAll(require.context('./assets/'));
+        }
     }
-  }
 }
 </script>
 
