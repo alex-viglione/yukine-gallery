@@ -1,7 +1,7 @@
 <template>
     <div id="image_box">
-        <h1>TEST COMPONENT</h1>
-        <p>{{index}}</p>
+        <h1>DISPLAY COMPONENT [WIP]</h1>
+        <img :src="images[index]" alt="">
     </div>
 </template>
 

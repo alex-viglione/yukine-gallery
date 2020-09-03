@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <h1>Yukine Gallery [WIP]</h1>
-        <p>{{picIndex}}</p>
         <h3>Welcome to the Chris Zone</h3>
         <div id="gallery">
             <img v-for="i in img_paths" class="pic" img alt="Beautiful Chris" :src="i"
