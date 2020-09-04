@@ -8,5 +8,5 @@
 
 ## Styling
 - [ ] Effect on hover
-- [ ] Put display component fixed over the whole width
+- [x] Put display component fixed over the whole width
 - [ ] Style the display box correctly
