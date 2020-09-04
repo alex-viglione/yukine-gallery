@@ -2,10 +2,13 @@
     <section id="info_box">
         <div class="wrapper">
             <h4>What is this page?</h4>
-            <p>Welcome, this is a gallery used to showcase all the images used by
-            my twitter bot : <a href="https://twitter.com/yukinebotine" target="__blank">Robochris</a></p>
+            <p>Gallery used to showcase all the images used by
+            my twitter bot : <a href="https://twitter.com/yukinebotine" target="__blank">Robochris</a>
+            , as well as serve as a collection of pics of best girl.</p>
+
             <p>This page is a non-profit project, all images used are screenshots taken from the animated
-            series <a href="https://www.symphogear.com/" target="__blank">Senki Zesshou Symphogear</a> (Some might be edited).</p>
+            series <a href="https://www.symphogear.com/" target="__blank">Senki Zesshou Symphogear</a>.</p>
+            <p>Fan edits may be included as well.</p>
     
             <h4>Contributions</h4>
             <p>You can contribute to filling this gallery (and thus the bot's pool of images), by tweeting
@@ -17,6 +20,8 @@
             <div class="links">
                 <a v-for="link in links" :href="link.url" target="__blank">{{link.name}}</a>
             </div>
+
+            <h6>Site built with Vue.js, hosted with Netlify</h6>
         </div>
     </section>
 </template>
@@ -27,7 +32,8 @@ export default {
         return {
             links: [
                 {name: 'Github (yukine-gallery)', url: 'https://github.com/alex-viglione/yukine-gallery'},
-                {name: 'My webpage', url: 'https://alex-viglione.github.io/'}
+                {name: 'My webpage', url: 'https://alex-viglione.github.io/'},
+                {name: 'waifu2x (image upscaler)', url: 'http://waifu2x.udp.jp/index.html'}
             ]
         }
     }
@@ -69,7 +75,7 @@ a:visited {
     color: #ff17b9;
 }
 
-a:hover {
-    color: #ff3a17;
+h6 {
+    margin-top: 2em;
 }
 </style>

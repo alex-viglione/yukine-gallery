@@ -2,14 +2,16 @@
     <div id="app">
 
         <header>
-            <h1>Yukine Gallery [WIP]</h1>
-            <h3>Welcome to the Chris Zone</h3>
-            <button @click="show_infobox = !show_infobox">Show Info</button>
+            <h1>Yukine Gallery</h1>
+            <h3>
+                Welcome to the Chris Zone
+                <button id="toggle_info" @click="show_infobox = !show_infobox"><h4>INFO</h4></button>
+            </h3>
         </header>
 
         <InfoBox v-if="show_infobox" />
 
-        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">🞩</h1>
+        <h1 class="xbutton noselect" v-if="show_imgbox" @click="show_imgbox = false">🞩</h1>
         
         <div id="gallery">
             <figure class="img_wrapper" v-lazyload v-for="i in img_paths" >
@@ -78,6 +80,11 @@ body {
     background: url('./Chris_After_Transformation_XV.png') no-repeat center center fixed;
 }
 
+header h3 {
+    display: flex;
+    justify-content: center;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -93,6 +100,26 @@ header {
     color: white;
     margin: 0 1em 0 1em;
     padding: 1em 0
+}
+
+#toggle_info {
+    border-radius: 0px;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    margin-left: 1em;
+}
+
+#toggle_info:hover {
+    color: #FF1744;
+}
+
+#toggle_info:active {
+    color: white;
+    background: #FF1744;
+    border: none;
 }
 
 #gallery {
@@ -138,7 +165,16 @@ header {
 }
 
 .xbutton:hover {
-    color: #FF1744;
+    color: #ff17b9;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 @media screen and (max-width: 600px) {

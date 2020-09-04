@@ -1,10 +1,10 @@
 <template>
     <div id="image_box">
-        <h1 @click="prev" v-show="hasPrev()"><</h1>
+        <h1 class="noselect" @click="prev" v-show="hasPrev()"><</h1>
         <div class="inner">
             <img :src="images[index]" alt="">
         </div>
-        <h1 @click="next" v-show="hasNext()">></h1>
+        <h1 class="noselect" @click="next" v-show="hasNext()">></h1>
     </div>
 </template>
 
@@ -87,6 +87,6 @@ h1 {
 }
 
 h1:hover {
-    color: #FF1744; 
+    color: #ff17b9; 
 }
 </style>
