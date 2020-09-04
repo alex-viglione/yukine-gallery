@@ -12,4 +12,4 @@
 - [x] Effect on hover
 - [x] Put display component fixed over the whole width
 - [x] Style the display box correctly
-- [ ] Style image box for mobile
+- [x] Style image box for mobile

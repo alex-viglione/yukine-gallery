@@ -103,11 +103,10 @@ export default {
 }
 
 .image_wrap {
-    height: 60%;
+    height: 80%;
 }
 
 #image_box img {
-    /*width: 100%;*/
     height: 100%;
     object-fit: contain;
     border: 1px solid white;
@@ -126,9 +125,32 @@ h1 {
     cursor: pointer;
     padding: 0 20px;
     color: white;
+    z-index: 10;
 }
 
 h1:hover {
     color: #ff17b9; 
+}
+
+@media screen and (max-width: 600px) {
+    #image_box img {
+        width: 100%;
+        height: initial;
+    }
+
+    .image_wrap {
+        height: initial;
+        display: flex;
+        align-items: center;
+    }
+
+    .inner {
+        width: 92%;
+        padding: 0;
+    }
+
+    h1 {
+        display: none;
+    }
 }
 </style>
