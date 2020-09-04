@@ -1,14 +1,19 @@
 <template>
     <div id="app">
+
         <h1>Yukine Gallery [WIP]</h1>
         <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         <h3>Welcome to the Chris Zone</h3>
+        
         <div id="gallery">
-            <img v-for="i in img_paths" class="pic" img alt="Beautiful Chris" :src="i"
-            @click="selectedPic = i; show_imgbox = true">
+            <figure class="img_wrapper" v-for="i in img_paths" >
+                <img class="pic" :src="i"
+                @click="selectedPic = i; show_imgbox = true">
+            </figure>
         </div>
 
         <ImageBox :images="img_paths" :index="picIndex" v-if="show_imgbox" />
+
     </div>
 </template>
 
@@ -69,7 +74,7 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    grid-auto-rows: minmax(300px, auto);
+    grid-auto-rows: minmax(auto, 300px);
     padding: 0 1em;
     margin: 1em 0;
 }
@@ -81,6 +86,11 @@ export default {
     object-fit: cover;
 }
 
+.img_wrapper {
+    width: 100%;
+    height: 100%;
+}
+
 .xbutton {
     position: fixed;
     color: black;
@@ -89,5 +99,11 @@ export default {
     z-index: 10;
     top: 20px;
     right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #gallery {
+        grid-auto-rows: minmax(auto, 100px);
+    }
 }
 </style>
