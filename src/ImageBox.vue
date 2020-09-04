@@ -10,6 +10,12 @@
 
 <script>
 export default {
+    data () {
+        return {
+            xDown: null,
+            yDown: null,
+        }
+    },
     props: {
         images: {
             type: Array,
@@ -45,10 +51,36 @@ export default {
             } else {
                 return;
             }
-        }
+        },
+        handleTouchStart(e) {
+            this.xDown = e.touches[0].clientX;
+            this.yDown = e.touches[0].clientY;
+        },
+        handleTouchMove(e) {
+            if (!this.xDown || !this.yDown) {
+                return;
+            }
+            let xUp = e.touches[0].clientX;
+            let yUp = e.touches[0].clientY;
+            let xDiff = this.xDown - xUp;
+            let yDiff = this.yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    this.next();
+                } else {
+                    this.prev();
+                }
+            }
+            this.xDown = null;
+            this.yDown = null;
+        },
     },
     mounted() {
         window.addEventListener('keydown', this.onKeydown);
+
+        window.addEventListener('touchstart', this.handleTouchStart, false);
+        window.addEventListener('touchmove', this.handleTouchMove, false);
     },
     destroyed() {
         window.removeEventListener('keydown', this.onKeydown);

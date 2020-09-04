@@ -5,7 +5,7 @@
 - [x] loop over this array with v-for, dynamically binding the src attribute to each img tag
 - [x] Show full image on click (use something akin to a lightbox)
 - [x] Ability to go left & right within the display box
-- [ ] Handle swiping
+- [x] Handle swiping
 - [ ] Exit image box on click outside
 
 ## Styling
