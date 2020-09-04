@@ -3,6 +3,8 @@
         <h4>What is this page?</h4>
         <p>Welcome, this is a gallery used to showcase all the images used by
         my twitter bot : <a href="https://twitter.com/yukinebotine" target="__blank">Robochris</a></p>
+        <p>This page is a non-profit project, all images used are screenshots taken from the animated
+        series <a href="https://www.symphogear.com/" target="__blank">Senki Zesshou Symphogear</a>(Some might be edited)</p>
 
         <h4>Contributions</h4>
         <p>You can contribute to filling this gallery (and thus the bot's pool of images), by tweeting
@@ -41,5 +43,9 @@ export default {
     width: 70%;
     margin: auto;
     justify-content: space-around;
+}
+
+a {
+    color: red;
 }
 </style>
