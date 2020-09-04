@@ -2,8 +2,9 @@
     <div id="app">
 
         <h1>Yukine Gallery [WIP]</h1>
-        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         <h3>Welcome to the Chris Zone</h3>
+
+        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         
         <div id="gallery">
             <figure class="img_wrapper" v-for="i in img_paths" >
@@ -104,6 +105,7 @@ export default {
 @media screen and (max-width: 600px) {
     #gallery {
         grid-auto-rows: minmax(auto, 100px);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
