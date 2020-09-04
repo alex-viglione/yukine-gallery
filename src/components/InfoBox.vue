@@ -1,20 +1,22 @@
 <template>
     <section id="info_box">
-        <h4>What is this page?</h4>
-        <p>Welcome, this is a gallery used to showcase all the images used by
-        my twitter bot : <a href="https://twitter.com/yukinebotine" target="__blank">Robochris</a></p>
-        <p>This page is a non-profit project, all images used are screenshots taken from the animated
-        series <a href="https://www.symphogear.com/" target="__blank">Senki Zesshou Symphogear</a>(Some might be edited)</p>
-
-        <h4>Contributions</h4>
-        <p>You can contribute to filling this gallery (and thus the bot's pool of images), by tweeting
-        the image directly to <a href="https://twitter.com/nreptile2" target="__blank">@yukinebotine</a>
-        , or to my own account <a href="https://twitter.com/nreptile2" target="__blank">@nreptile2</a>.
-        I will by default add your twitter handle to this section, unless specified otherwise</p>
-
-        <h4>Links</h4>
-        <div class="links">
-            <a v-for="link in links" :href="link.url" target="__blank">{{link.name}}</a>
+        <div class="wrapper">
+            <h4>What is this page?</h4>
+            <p>Welcome, this is a gallery used to showcase all the images used by
+            my twitter bot : <a href="https://twitter.com/yukinebotine" target="__blank">Robochris</a></p>
+            <p>This page is a non-profit project, all images used are screenshots taken from the animated
+            series <a href="https://www.symphogear.com/" target="__blank">Senki Zesshou Symphogear</a> (Some might be edited).</p>
+    
+            <h4>Contributions</h4>
+            <p>You can contribute to filling this gallery (and thus the bot's pool of images), by tweeting
+            the image directly to <a href="https://twitter.com/nreptile2" target="__blank">@yukinebotine</a>
+            , or to my own account <a href="https://twitter.com/nreptile2" target="__blank">@nreptile2</a>.
+            I will by default add your twitter handle to this section, unless specified otherwise.</p>
+    
+            <h4>Links</h4>
+            <div class="links">
+                <a v-for="link in links" :href="link.url" target="__blank">{{link.name}}</a>
+            </div>
         </div>
     </section>
 </template>
@@ -34,8 +36,10 @@ export default {
 
 <style scoped>
 #info_box {
-    background: #333;
+    background: rgba(34, 34, 34, 0.9);
     color: white;
+    margin: 1em 1em 0 1em;
+    padding-bottom: 1em;
 }
 
 .links {
@@ -45,7 +49,27 @@ export default {
     justify-content: space-around;
 }
 
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+h4 {
+    padding-top: 1em;
+    padding-bottom: .4em;
+}
+
 a {
-    color: red;
+    color: #FF1744;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ff17b9;
+}
+
+a:hover {
+    color: #ff3a17;
 }
 </style>

@@ -1,9 +1,13 @@
 <template>
     <div id="app">
 
-        <h1>Yukine Gallery [WIP]</h1>
-        <h3>Welcome to the Chris Zone</h3>
-        <InfoBox />
+        <header>
+            <h1>Yukine Gallery [WIP]</h1>
+            <h3>Welcome to the Chris Zone</h3>
+            <button @click="show_infobox = !show_infobox">Show Info</button>
+        </header>
+
+        <InfoBox v-if="show_infobox" />
 
         <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         
@@ -30,6 +34,7 @@ export default {
         return {
             img_paths: [],
             show_imgbox: false,
+            show_infobox: false,
             selectedPic: ''
         }
     },
@@ -69,6 +74,10 @@ export default {
     margin: 0;
 }
 
+body {
+    background: url('./Chris_After_Transformation_XV.png') no-repeat center center fixed;
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -76,7 +85,14 @@ export default {
     text-align: center;
     color: #2c3e50;
     padding-top: 30px;
-    background: url('./Chris_After_Transformation_XV.png') no-repeat center center fixed;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background: rgba(34, 34, 34, 0.9);
+    color: white;
+    margin: 0 1em 0 1em;
+    padding: 1em 0
 }
 
 #gallery {
@@ -91,14 +107,23 @@ export default {
 .pic {
     cursor: pointer;
     width: 100%;
-    height: 100%;
+    height: 97%;
     object-fit: cover;
+    transition: height .2s;
+}
+
+.pic:hover {
+    height: 100%;
 }
 
 .img_wrapper {
     width: 100%;
     height: 100%;
     background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 .xbutton {
