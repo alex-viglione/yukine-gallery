@@ -7,8 +7,8 @@
         <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         
         <div id="gallery">
-            <figure class="img_wrapper" v-for="i in img_paths" >
-                <img class="pic" :src="i"
+            <figure class="img_wrapper" v-lazyload v-for="i in img_paths" >
+                <img class="pic" :data-url="i"
                 @click="selectedPic = i; show_imgbox = true">
             </figure>
         </div>
@@ -20,6 +20,7 @@
 
 <script>
 import ImageBox from './ImageBox.vue';
+import lazyload from './lazyload.js';
 
 export default {
     name: 'App',
@@ -40,6 +41,9 @@ export default {
     },
     components: {
         ImageBox
+    },
+    directives: {
+        lazyload
     },
     methods: {
         importAll(r) {
