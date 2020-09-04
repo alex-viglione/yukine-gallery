@@ -2,7 +2,9 @@
     <div id="image_box">
         <h1 class="noselect" @click="prev" v-show="hasPrev()"><</h1>
         <div class="inner">
-            <img :src="images[index]" alt="">
+            <div class="image_wrap">
+                <img :src="images[index]" alt="">
+            </div>
         </div>
         <h1 class="noselect" @click="next" v-show="hasNext()">></h1>
     </div>
@@ -100,16 +102,24 @@ export default {
     justify-content: center;
 }
 
+.image_wrap {
+    height: 60%;
+}
+
 #image_box img {
-    width: 100%;
+    /*width: 100%;*/
     height: 100%;
     object-fit: contain;
+    border: 1px solid white;
 }
 
 .inner {
     width: 80%;
-    height: 90%;
+    height: 100%;
     padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
