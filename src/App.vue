@@ -3,6 +3,7 @@
 
         <h1>Yukine Gallery [WIP]</h1>
         <h3>Welcome to the Chris Zone</h3>
+        <InfoBox />
 
         <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
         
@@ -21,6 +22,7 @@
 <script>
 import ImageBox from './ImageBox.vue';
 import lazyload from './lazyload.js';
+import InfoBox from './components/InfoBox.vue';
 
 export default {
     name: 'App',
@@ -40,7 +42,8 @@ export default {
         }
     },
     components: {
-        ImageBox
+        ImageBox,
+        InfoBox
     },
     directives: {
         lazyload
@@ -72,7 +75,8 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 30px;
+    padding-top: 30px;
+    background: url('./Chris_After_Transformation_XV.png') no-repeat center center fixed;
 }
 
 #gallery {
@@ -94,6 +98,7 @@ export default {
 .img_wrapper {
     width: 100%;
     height: 100%;
+    background-color: #222;
 }
 
 .xbutton {
