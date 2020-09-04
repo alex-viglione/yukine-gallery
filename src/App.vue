@@ -11,7 +11,7 @@
 
         <InfoBox v-if="show_infobox" />
 
-        <h1 class="xbutton noselect" v-if="show_imgbox" @click="show_imgbox = false">🞩</h1>
+        <h1 class="xbutton noselect" v-if="show_imgbox" @click="show_imgbox = false">x</h1>
         
         <div id="gallery">
             <figure class="img_wrapper" v-lazyload v-for="i in img_paths" >
