@@ -9,7 +9,7 @@
 
         <InfoBox v-if="show_infobox" />
 
-        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">X</h1>
+        <h1 class="xbutton" v-if="show_imgbox" @click="show_imgbox = false">🞩</h1>
         
         <div id="gallery">
             <figure class="img_wrapper" v-lazyload v-for="i in img_paths" >
@@ -109,11 +109,13 @@ header {
     width: 100%;
     height: 97%;
     object-fit: cover;
-    transition: height .2s;
+    opacity: 0.9;
+    transition: height .2s, opacity .2s;
 }
 
 .pic:hover {
     height: 100%;
+    opacity: 1;
 }
 
 .img_wrapper {
@@ -128,12 +130,15 @@ header {
 
 .xbutton {
     position: fixed;
-    color: black;
-    background-color: white;
+    color: white;
     cursor: pointer;
     z-index: 10;
     top: 20px;
     right: 20px;
+}
+
+.xbutton:hover {
+    color: #FF1744;
 }
 
 @media screen and (max-width: 600px) {

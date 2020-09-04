@@ -59,11 +59,10 @@ export default {
 <style scoped>
 #image_box {
     position: fixed;
-    top: 10%;
-    height: 80%;
+    top: 0;
+    height: 100%;
     width: 100%;
-    padding: 2em 0;
-    background-color: #222;
+    background: rgba(34, 34, 34, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,12 +76,17 @@ export default {
 
 .inner {
     width: 80%;
-    height: 100%;
+    height: 90%;
     padding: 2em;
 }
 
 h1 {
     cursor: pointer;
+    padding: 0 20px;
     color: white;
+}
+
+h1:hover {
+    color: #FF1744; 
 }
 </style>
