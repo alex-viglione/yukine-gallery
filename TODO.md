@@ -7,6 +7,6 @@
 - [x] Ability to go left & right within the display box
 
 ## Styling
-- [ ] Effect on hover
+- [x] Effect on hover
 - [x] Put display component fixed over the whole width
-- [ ] Style the display box correctly
+- [x] Style the display box correctly
