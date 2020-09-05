@@ -6,7 +6,7 @@
 - [x] Show full image on click (use something akin to a lightbox)
 - [x] Ability to go left & right within the display box
 - [x] Handle swiping
-- [ ] Exit image box on click outside
+- [x] Exit image box on click outside
 
 ## Styling
 - [x] Effect on hover
