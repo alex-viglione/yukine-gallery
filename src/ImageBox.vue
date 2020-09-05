@@ -4,9 +4,7 @@
         <div class="inner">
             <div class="image_wrap">
                 <img :src="images[index]" 
-                v-outsideclick="{exclude: ['arrowPrev', 'arrowNext', 'thumbn'], 
-                handler: 'onOutsideClick'}"
-                >
+                v-outsideclick="onOutsideClick">
             </div>
         </div>
         <h1 class="noselect" @click="next" v-show="hasNext()" ref="arrowNext">></h1>
@@ -38,7 +36,6 @@ export default {
     },
     methods: {
         onOutsideClick() {
-            console.log('lmao');
             this.$emit('outsideClick');
         },
         hasNext() {
