@@ -1,22 +1,30 @@
 <template>
     <div id="image_box">
-        <h1 class="noselect" @click="prev" v-show="hasPrev()"><</h1>
+        <h1 class="noselect" @click="prev" v-show="hasPrev()" ref="arrowPrev"><</h1>
         <div class="inner">
             <div class="image_wrap">
-                <img :src="images[index]" alt="">
+                <img :src="images[index]" 
+                v-outsideclick="{exclude: ['arrowPrev', 'arrowNext', 'thumbn'], 
+                handler: 'onOutsideClick'}"
+                >
             </div>
         </div>
-        <h1 class="noselect" @click="next" v-show="hasNext()">></h1>
+        <h1 class="noselect" @click="next" v-show="hasNext()" ref="arrowNext">></h1>
     </div>
 </template>
 
 <script>
+import { outsideclick } from './outside_click.js';
+
 export default {
     data () {
         return {
             xDown: null,
             yDown: null,
         }
+    },
+    directives: {
+        outsideclick
     },
     props: {
         images: {
@@ -29,6 +37,10 @@ export default {
         }
     },
     methods: {
+        onOutsideClick() {
+            console.log('lmao');
+            this.$emit('outsideClick');
+        },
         hasNext() {
             return this.index + 1 < this.images.length;
         },

@@ -15,12 +15,14 @@
         
         <div id="gallery">
             <figure class="img_wrapper" v-lazyload v-for="i in img_paths" >
-                <img class="pic" :data-url="i"
+                <img class="pic" :data-url="i" ref="thumbn"
                 @click="selectedPic = i; show_imgbox = true">
             </figure>
         </div>
 
-        <ImageBox :images="img_paths" :index="picIndex" v-if="show_imgbox" />
+        <ImageBox @outsideClick="show_imgbox = false" 
+        :images="img_paths" :index="picIndex" 
+        v-show="show_imgbox" />
 
     </div>
 </template>
@@ -59,9 +61,6 @@ export default {
         importAll(r) {
             r.keys().forEach(key => (this.img_paths.push(r(key))));
         },
-        logger(data) {
-            console.log(data);
-        }
     },
     mounted() {
         {
